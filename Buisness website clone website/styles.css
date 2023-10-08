@@ -1,0 +1,264 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-image: url("https://images.unsplash.com/photo-1464746133101-a2c3f88e0dd9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2043&q=80");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  height: 120vh;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: #0c3c60;
+  padding: 0.5rem 2rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul:last-child {
+  display: none;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  margin-left: 30px;
+  transition: 0.3s;
+}
+
+nav ul li a:hover {
+  color: rgb(140, 176, 183);
+}
+
+section {
+  margin-top: 10rem;
+}
+
+.heading {
+  color: white;
+  font-size: 1.3em;
+  cursor: pointer;
+}
+
+.log-in {
+  display: flex;
+  gap: 8px;
+}
+
+.material-symbols-outlined {
+  color: white;
+}
+
+.hero-container {
+  background: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 2rem;
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  width: 900px;
+  transform: translate(-50%, 90%);
+  border-radius: 0.3em;
+  animation: fade-in 1s ease 1s forwards;
+}
+
+.title,
+.encourage-txt {
+  font-weight: 500;
+}
+
+.title {
+  font-size: 1.5em;
+}
+
+.encourage-txt {
+  color: #072136;
+  text-transform: uppercase;
+  font-size: 4em;
+}
+
+.btn {
+  background: none;
+  border: none;
+  border: 0.5px solid #072136;
+  padding: 1rem 3rem;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.btn:hover {
+  background-color: #0c3c60;
+  color: white;
+}
+
+.links-section {
+  padding: 4rem;
+  margin-top: 80px;
+}
+
+.links-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(250px, auto));
+  justify-content: space-around;
+  gap: 30px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 300px;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.title-box {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 2.5em;
+}
+
+.mini-txt {
+  text-align: center;
+  line-height: 1.6em;
+  font-size: 16px;
+}
+
+.about-section {
+  background-image: url("https://images.unsplash.com/photo-1454496522488-7a8e488e8606?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1776&q=80");
+  background-size: cover;
+  background-color: rgb(236, 248, 255, 0.8);
+  background-blend-mode: overlay;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  padding: 4rem 0;
+}
+
+.about-container {
+  opacity: 0;
+  transition: 0.3s;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6em;
+  font-size: 16px;
+}
+
+.scrolled {
+  opacity: 1;
+}
+
+.scrolled.up {
+  animation: slide-up 1s ease both 0.3s;
+}
+
+.line {
+  background-color: white;
+  width: 20px;
+  height: 3px;
+}
+
+@media only screen and (max-device-width: 1366px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 940px) {
+  /* This is for the nav bar turning into a hamburger bar */
+  nav ul:nth-child(2) {
+    display: none;
+  }
+
+  /* This is for the "Acheiving growth" box */
+  .hero-container {
+    background: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 2rem;
+    position: absolute;
+    opacity: 0;
+    top: -10%;
+    left: 50%;
+    width: 80vw;
+    border-radius: 0.3em;
+  }
+
+  /* This is for the links */
+  .links-container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(250px, auto));
+    justify-content: space-around;
+    gap: 30px;
+  }
+
+  /* Hamburger */
+  nav ul:last-child, .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  /* About container */
+  .about-container {
+    opacity: 0;
+    transition: 0.3s;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6em;
+    font-size: 16px;
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 550px) {
+  .encourage-txt {
+    color: #072136;
+    text-transform: uppercase;
+    font-size: 2vw;
+  }
+}
+
+@keyframes fade-in {
+  100% {
+    transform: translate(-50%, 60%);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
