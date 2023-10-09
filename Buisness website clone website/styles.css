@@ -66,6 +66,10 @@ section {
 }
 
 .hero-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: white;
   font-weight: bold;
   text-align: center;
@@ -175,10 +179,15 @@ section {
   animation: slide-up 1s ease both 0.3s;
 }
 
-.line {
+.hamburger-lines {
   background-color: white;
   width: 20px;
   height: 3px;
+  border-radius: 0.3em;
+}
+
+.svg {
+  background-size: 20px 30px;
 }
 
 @media only screen and (max-device-width: 1366px) {
@@ -188,6 +197,11 @@ section {
 }
 
 @media (max-width: 940px) {
+  nav {
+    align-items: center;
+    padding: 0;
+  }
+
   /* This is for the nav bar turning into a hamburger bar */
   nav ul:nth-child(2) {
     display: none;
@@ -216,11 +230,13 @@ section {
   }
 
   /* Hamburger */
-  nav ul:last-child, .hamburger {
+  nav ul:last-child,
+  .hamburger {
     display: flex;
     flex-direction: column;
     gap: 5px;
     cursor: pointer;
+    padding-right: 15px;
   }
 
   /* About container */
@@ -240,7 +256,25 @@ section {
   .encourage-txt {
     color: #072136;
     text-transform: uppercase;
-    font-size: 2vw;
+    font-size: 35px;
+  }
+
+  .hero-container {
+    background: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 2rem;
+    position: absolute;
+    opacity: 0;
+    top: -10%;
+    left: 50%;
+    width: 80vw;
+    border-radius: 0.3em;
+    text-align: center;
+  }
+
+  .btn.book-btn {
+    scale: 0.8;
   }
 }
 
